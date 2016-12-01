@@ -1,0 +1,15 @@
+@mixin col-width($numColumns) {
+    width: 100% / $numColumns;
+}
+@mixin queries($min, $max) {
+    @if $max > $min {
+        @media all and (min-width: $min) and (max-width: $max){
+            @content;
+        }
+    }
+    @else {
+        @media all and (min-width: $min) {
+            @content;
+        }
+    }
+}
